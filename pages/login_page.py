@@ -1,8 +1,6 @@
 from pages.hollder_driver import BaceHollderDriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
 import os
-from dotenv import load_dotenv
 
 class PageLogin(BaceHollderDriver):
     def click_log_in(self):

@@ -1,4 +1,3 @@
-from selenium import webdriver
 from pages.welcome_page import Welcom
 class TestPageWelcome:
     def test_open_page(self,driver):

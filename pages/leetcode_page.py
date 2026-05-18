@@ -1,6 +1,5 @@
 from pages.hollder_driver import BaceHollderDriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
 
 
 class PageLeetcode(BaceHollderDriver):
