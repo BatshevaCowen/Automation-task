@@ -1,0 +1,7 @@
+#Hiding website login information
+.env
+**/test_pages/.env
+#Hiding temporary files
+__pycache__/
+*.pyc
+.pytest_cache/

@@ -9,6 +9,3 @@ class TestPageWelcome:
         exepted_url = "https://entry-point.me/login"
         assert url == exepted_url
         
-
-
-    

@@ -9,5 +9,6 @@ class PageLeetcode(BaceHollderDriver):
         self.driver.find_element(By.XPATH, "//span[text()='ליטקוד']").click()
         
     def solved_leetcode_count(self):
-        return self.driver.find_element(By.XPATH, "//span[.='28 הושלמו']").text
+        self.driver.implicitly_wait(10)
+        return self.driver.find_element(By.XPATH,  "//span[.='29 הושלמו']").text
 

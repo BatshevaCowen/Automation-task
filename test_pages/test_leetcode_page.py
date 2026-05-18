@@ -23,9 +23,7 @@ class TestLeetcode:
         log_in.click_log_in()
         leetcode_click = PageLeetcode(driver)
         leetcode_click.click_leetcode_buttom()
-        solved = leetcode_click.solved_leetcode_count()
-
-        assert solved > 5
-        
-
-
+        text_element = (leetcode_click.solved_leetcode_count())
+        text_element = int(text_element.split()[0])
+        assert text_element > 5
+    
