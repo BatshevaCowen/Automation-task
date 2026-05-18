@@ -43,7 +43,8 @@ jobs:
 
   # לבדוק טיפוסים עם Mypy
     - name: Run Mypy Type Checker
-      run: mypy . --ignore-missing-imports
+      run: mypy . --ignore-missing-imports --explicit-package-bases
+      #run: mypy . --ignore-missing-imports
 
     #   להריץ את הטסטים האוטומטיים עם הסיסמאות הסודיוצ
     - name: Run Automation Tests
