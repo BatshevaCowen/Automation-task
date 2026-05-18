@@ -1,0 +1,54 @@
+name: Python Automation CI
+
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+# 2. מה לעשות? רשימת המשימות של הרובוט
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest # לפתוח מחשב וירטואלי בענן
+
+    steps:
+    #  ': להוריד את הקוד שלך מהאתר לתוך המחשב הוירטואלי
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    #  ': להתקין פייתון במחשב הוירטואלי
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    # צ להתקין דפדפן כרום בשביל סלניום
+    - name: Setup Chrome
+      uses: browser-actions/setup-chrome@v1
+      with:
+        chrome-version: stable
+
+    # : להתקין את כל הספריות שלך (סלניום, פייטסט, ראף, מייפא
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    # צעד' : לבדוק את איכות הקוד שלך
+    - name: Run Ruff Linter
+      run: ruff check .
+
+  # לבדוק טיפוסים עם Mypy
+    - name: Run Mypy Type Checker
+      run: mypy . --ignore-missing-imports
+
+    #   להריץ את הטסטים האוטומטיים עם הסיסמאות הסודיוצ
+    - name: Run Automation Tests
+      env:
+        ENTRYPOINT_USERNAME: ${{ secrets.ENTRYPOINT_USERNAME }}
+        ENTRYPOINT_PASSWORD: ${{ secrets.ENTRYPOINT_PASSWORD }}
+      run: |
+        python -m pytest
