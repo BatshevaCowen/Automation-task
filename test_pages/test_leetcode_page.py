@@ -23,7 +23,8 @@ class TestLeetcode:
         log_in.click_log_in()
         leetcode_click = PageLeetcode(driver)
         leetcode_click.click_leetcode_buttom()
-        text_element = (leetcode_click.solved_leetcode_count())
-        text_element = int(text_element.split()[0])
-        assert text_element > 5
+        solved_leetcode_count = (leetcode_click.solved_leetcode_count())
+        solved_leetcode_count = int(solved_leetcode_count.split()[0])
+        assert solved_leetcode_count >= 6, f"Expected at least 6 solved leetcode items, got {solved_leetcode_count}"
+        #assert text_element > 5
     

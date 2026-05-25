@@ -1,9 +1,9 @@
 from selenium.webdriver.common.by import By
-from pages.hollder_driver import BaceHollderDriver
+from pages.hollder_driver import BasePage
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-class Welcom(BaceHollderDriver):
+class Welcom(BasePage):
     def connect(self):
         self.driver.maximize_window()
         wait = WebDriverWait(self.driver, 10)

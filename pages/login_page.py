@@ -1,8 +1,8 @@
-from pages.hollder_driver import BaceHollderDriver
+from pages.hollder_driver import BasePage
 from selenium.webdriver.common.by import By
 import os
 
-class PageLogin(BaceHollderDriver):
+class PageLogin(BasePage):
     def click_log_in(self):
         self.driver.implicitly_wait(10)
         email_user = self.driver.find_element(By.ID, "login-email")
