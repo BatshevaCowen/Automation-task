@@ -16,10 +16,10 @@ cd Automation-task
 
 To run the tests, you need to set up your environment variables for authentication:
 
-1. Create a .env file in the test_pages directory.
+1. Create a .env file in the root directory.
 2. Add your LeetCode credentials into the .env file like this:
-   LEETCODE_USERNAME=your_username_here
-   LEETCODE_PASSWORD=your_password_here
+   ENTRYPOINT_USERNAME=your_username_here
+   ENTRYPOINT_PASSWORD=your_password_here
 
 # Create the environment
 seting -> python select interpeter -> .vene
