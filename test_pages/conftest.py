@@ -1,6 +1,8 @@
 import pytest
 from selenium import webdriver
 from dotenv import load_dotenv
+from pages.welcome_page import Welcom
+from pages.login_page import PageLogin
 from selenium.webdriver.chrome.options import Options
 load_dotenv()
 @pytest.fixture
@@ -16,6 +18,16 @@ def driver(scope="function"):
     driver.implicitly_wait(10)
     yield driver
     driver.quit()
+
+@pytest.fixture
+def authenticated_driver(driver):
+    welcome = Welcom(driver)
+    welcome.connect()
+
+    log_in = PageLogin(driver)
+    log_in.click_log_in()
+
+    return driver
 
 
 

@@ -4,6 +4,12 @@ The installation of the plugins is in the requirements file.
 The installation of the extensions is in the extensions.JSON file 
 and versions in the requirements fil
 
+## Prerequisites
+- Python 3.12+
+- uv
+- Chrome
+- EntryPoint account
+
 # Installation and Setup
 Follow these steps to set up the project locally on your machine:
 
@@ -29,3 +35,7 @@ pip install -r requirements.txt
 
 # run all tests in the terminal
 python -m pytest
+
+# Entry Point Automation Tests
+
+This project runs Selenium tests for EntryPoint login and LeetCode progress.
