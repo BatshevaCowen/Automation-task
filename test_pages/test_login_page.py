@@ -1,5 +1,3 @@
-from pages.login_page import PageLogin 
-from pages.welcome_page import Welcom
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 class TestPageLogin:

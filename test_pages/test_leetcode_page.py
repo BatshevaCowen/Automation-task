@@ -1,6 +1,4 @@
 from pages.leetcode_page import PageLeetcode
-from pages.welcome_page import Welcom
-from pages.login_page import PageLogin
 
 class TestLeetcode:
     def test_open_page_leetcode(self,authenticated_driver):
