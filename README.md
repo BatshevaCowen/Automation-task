@@ -28,4 +28,4 @@ seting -> python select interpeter -> .vene
 pip install -r requirements.txt
 
 # run all tests in the terminal
-pytest -m pytest
+python -m pytest

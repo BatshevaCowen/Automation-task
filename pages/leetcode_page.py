@@ -12,7 +12,7 @@ class PageLeetcode(BasePage):
         
     def solved_leetcode_count(self):
         wait = WebDriverWait(self.driver, 10)
-        element = wait.until(EC.visibility_of_element_located((By.XPATH,"//span[.='32 הושלמו']")))
+        element = wait.until(EC.visibility_of_element_located((By.XPATH,"//span[.='33 הושלמו']")))
         return element.text
     
 
