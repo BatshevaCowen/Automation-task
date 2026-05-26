@@ -4,7 +4,10 @@ from dotenv import load_dotenv
 from pages.welcome_page import WelcomPage
 from pages.login_page import PageLogin
 from selenium.webdriver.chrome.options import Options
+
 load_dotenv()
+
+
 @pytest.fixture
 def driver(scope="function"):
     chrome_options = Options()
@@ -19,6 +22,7 @@ def driver(scope="function"):
     yield driver
     driver.quit()
 
+
 @pytest.fixture
 def authenticated_driver(driver):
     welcome = WelcomPage(driver)
@@ -28,12 +32,3 @@ def authenticated_driver(driver):
     log_in.click_log_in()
 
     return driver
-
-
-
-
-
-
-
-
-

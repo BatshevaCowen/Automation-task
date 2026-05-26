@@ -9,10 +9,10 @@ class PageLeetcode(BasePage):
         self.driver.implicitly_wait(10)
         leetcode_btn = self.driver.find_element(By.XPATH, "//span[text()='ליטקוד']")
         self.driver.execute_script("arguments[0].click();", leetcode_btn)
-        
+
     def solved_leetcode_count(self):
         wait = WebDriverWait(self.driver, 10)
-        element = wait.until(EC.visibility_of_element_located((By.XPATH,"//span[.='34 הושלמו']")))
+        element = wait.until(
+            EC.visibility_of_element_located((By.XPATH, "//span[.='34 הושלמו']"))
+        )
         return element.text
-    
-
