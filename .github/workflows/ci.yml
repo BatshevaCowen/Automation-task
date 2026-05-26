@@ -35,7 +35,7 @@ jobs:
           ENTRYPOINT_USERNAME: ${{ secrets.ENTRYPOINT_USERNAME }}
           ENTRYPOINT_PASSWORD: ${{ secrets.ENTRYPOINT_PASSWORD }}
           HEADLESS: "true"
-        run: uv run pytest tests/ --html=reports/report.html --self-contained-html -v
+        run: uv run pytest tests_entry_point/ --html=reports/report.html --self-contained-html -v
       - name: Upload test report
         if: always()
         uses: actions/upload-artifact@v4
